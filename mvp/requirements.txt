@@ -1,0 +1,5 @@
+streamlit>=1.30
+
+# Optional, only needed for live LLM mode:
+# openai>=1.0
+# anthropic>=0.20

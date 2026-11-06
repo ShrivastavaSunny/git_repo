@@ -1,0 +1,36 @@
+{
+  "metric": "12-month SIP continuation for first-time investors (active = >=1 successful instalment in last 30 days)",
+  "product": "Groww",
+  "golden_set": [
+    {"id":1,"source":"play_store","snippet":"SIP paused after 3 months, no reason shown","primary_theme":"pause_reduce_stop","pause_signal":"Y","segment":"salaried","engine_agree":true},
+    {"id":2,"source":"reddit","snippet":"Started SIP 6 months ago, 2% return, should I stop?","primary_theme":"returns_underwhelming","pause_signal":"Y","segment":"first-time","engine_agree":true},
+    {"id":3,"source":"youtube","snippet":"YouTuber said 12% guaranteed, now down 4%","primary_theme":"expectation_mismatch","pause_signal":"N","segment":"influenced_by_youtuber","engine_agree":true},
+    {"id":4,"source":"play_store","snippet":"₹1000 debited but units not showing","primary_theme":"confusion_worry_in_app","pause_signal":"N","segment":"salaried","engine_agree":true},
+    {"id":5,"source":"reddit","snippet":"Freelancer, income irregular, can't pay some months","primary_theme":"pause_reduce_stop","pause_signal":"Y","segment":"irregular_income","engine_agree":true},
+    {"id":6,"source":"tradingqa","snippet":"How often should I check SIP portfolio?","primary_theme":"checking_frequency","pause_signal":"N","segment":"new_investor","engine_agree":true},
+    {"id":7,"source":"reddit","snippet":"Pause vs stop confused, SIP lapsed","primary_theme":"pause_reduce_stop","pause_signal":"Y","segment":"cautious","engine_agree":true},
+    {"id":8,"source":"play_store","snippet":"Daily push notifications make me anxious","primary_theme":"checking_frequency","pause_signal":"N","segment":"anxious_checker","engine_agree":false},
+    {"id":9,"source":"reddit","snippet":"Friend suggested SIP, started with ₹500","primary_theme":"influence_source","pause_signal":"N","segment":"friend_influence","engine_agree":true},
+    {"id":10,"source":"youtube","snippet":"Checking NAV every day, red days scare me","primary_theme":"checking_frequency","pause_signal":"N","segment":"daily_checker","engine_agree":false},
+    {"id":11,"source":"tradingqa","snippet":"Can I skip one month of SIP?","primary_theme":"pause_reduce_stop","pause_signal":"Y","segment":"irregular_income","engine_agree":true},
+    {"id":12,"source":"play_store","snippet":"App confusing, don't understand NAV","primary_theme":"lack_of_visibility","pause_signal":"N","segment":"new_investor","engine_agree":true},
+    {"id":13,"source":"reddit","snippet":"Market fell, wanted to pause but only stop available","primary_theme":"pause_reduce_stop","pause_signal":"Y","segment":"market_volatility","engine_agree":true},
+    {"id":14,"source":"twitter","snippet":"Asked WhatsApp group whether to stop SIP","primary_theme":"outside_app_behavior","pause_signal":"N","segment":"peer_advice","engine_agree":true},
+    {"id":15,"source":"app_store","snippet":"SIP instalment failed, no retry option","primary_theme":"confusion_worry_in_app","pause_signal":"N","segment":"salaried","engine_agree":true},
+    {"id":16,"source":"reddit","snippet":"Father says put in FD instead of SIP","primary_theme":"outside_app_behavior","pause_signal":"N","segment":"family_influence","engine_agree":true},
+    {"id":17,"source":"youtube","snippet":"Portfolio flat after 4 months, demotivated","primary_theme":"returns_underwhelming","pause_signal":"N","segment":"first-time","engine_agree":true},
+    {"id":18,"source":"tradingqa","snippet":"SIP stopped, how to restart?","primary_theme":"pause_reduce_stop","pause_signal":"Y","segment":"lapsed_user","engine_agree":true},
+    {"id":19,"source":"play_store","snippet":"Expected quick returns, SIP not growing fast","primary_theme":"expectation_mismatch","pause_signal":"N","segment":"first-time","engine_agree":true},
+    {"id":20,"source":"reddit","snippet":"Forgot about SIP, realised it paused 2 months ago","primary_theme":"pause_reduce_stop","pause_signal":"Y","segment":"passive_user","engine_agree":true}
+  ],
+  "agreement": {
+    "primary_theme_match_pct": 85,
+    "pause_signal_match_pct": 100,
+    "total_items": 20
+  },
+  "ai_corrections": [
+    {"id":"corr_1","item":3,"issue":"theme conflation","ai_output":"expectation_mismatch and returns_underwhelming co-equal","correction":"Primary = expectation_mismatch; returns_underwhelming secondary","reason":"Root cause is expectation set at onboarding, not market return; intervention differs"},
+    {"id":"corr_2","item":15,"issue":"pause signal over-call","ai_output":"pause_signal = Y","correction":"pause_signal = N","reason":"Failed instalment is technical failure, not intentional pause decision"},
+    {"id":"corr_3","item":"llm_draft","issue":"investment advice","ai_output":"recommend index funds for steady returns","correction":"rejected entirely","reason":"Cannot recommend funds/stocks; must not present investment advice"}
+  ]
+}

@@ -1,0 +1,298 @@
+{
+  "generated_at": "2026-10-26T16:48:38.120536+00:00",
+  "total_items_analyzed": 7,
+  "theme_prevalence": {
+    "returns_underwhelming": 57.1,
+    "pause_reduce_stop": 85.7,
+    "lack_of_visibility": 42.9,
+    "outside_app_behavior": 42.9,
+    "influence_source": 42.9,
+    "confusion_worry_in_app": 28.6,
+    "segment_income_stability": 14.3,
+    "expectation_mismatch": 14.3,
+    "checking_frequency": 14.3
+  },
+  "theme_counts": {
+    "returns_underwhelming": 4,
+    "pause_reduce_stop": 6,
+    "lack_of_visibility": 3,
+    "outside_app_behavior": 3,
+    "influence_source": 3,
+    "confusion_worry_in_app": 2,
+    "segment_income_stability": 1,
+    "expectation_mismatch": 1,
+    "checking_frequency": 1
+  },
+  "theme_examples": {
+    "returns_underwhelming": [
+      {
+        "source": "Groww",
+        "title": "Good app but SIP paused itself",
+        "snippet": "Started a SIP of 500 in month 1. After 3 months it just paused. No clear reason in app. I kept checking returns but they looked flat.",
+        "url": "https://play.google.com/store/apps/details?id=com.groww"
+      },
+      {
+        "source": "Reddit",
+        "title": "First time SIP - what to expect after 6 months?",
+        "snippet": "I started a SIP via Groww 6 months ago. Portfolio shows 2% return. Friends say equity takes time but the app doesn't explain this. Should I stop?",
+        "url": "https://reddit.com/r/IndiaInvestments/comments/abc123"
+      },
+      {
+        "source": "YouTube",
+        "title": "Comment on SIP returns video",
+        "snippet": "Started SIP last year because a YouTuber said 12% guaranteed. After 8 months I am down 4%. App doesn't explain why negative. My father says stop and put in FD.",
+        "url": "https://youtube.com/watch?v=example"
+      },
+      {
+        "source": "TradingQ&A",
+        "title": "How often should I check SIP portfolio?",
+        "snippet": "New to Groww. Checking NAV daily. Some days green some days red. Anxiety every evening. Friends say don't check daily but app sends daily push notifications.",
+        "url": "https://tradingqna.com/question/99"
+      }
+    ],
+    "pause_reduce_stop": [
+      {
+        "source": "Groww",
+        "title": "Good app but SIP paused itself",
+        "snippet": "Started a SIP of 500 in month 1. After 3 months it just paused. No clear reason in app. I kept checking returns but they looked flat.",
+        "url": "https://play.google.com/store/apps/details?id=com.groww"
+      },
+      {
+        "source": "Reddit",
+        "title": "First time SIP - what to expect after 6 months?",
+        "snippet": "I started a SIP via Groww 6 months ago. Portfolio shows 2% return. Friends say equity takes time but the app doesn't explain this. Should I stop?",
+        "url": "https://reddit.com/r/IndiaInvestments/comments/abc123"
+      },
+      {
+        "source": "Groww",
+        "title": "SIP money debited but not invested",
+        "snippet": "₹1000 was debited from my bank for SIP but mutual fund units not showing. Customer care gave no timeline. Very worried. Thinking to stop SIP.",
+        "url": "https://play.google.com/store/apps/details?id=com.groww"
+      },
+      {
+        "source": "Reddit",
+        "title": "Freelancer income irregular - should I pause SIP?",
+        "snippet": "I earn freelance, income comes in bursts. Started SIP of 2000 but some months I can't pay. App shows SIP failed but no option to skip just one month. Feels all-or-nothing.",
+        "url": "https://reddit.com/r/IndiaInvestments/comments/def456"
+      },
+      {
+        "source": "YouTube",
+        "title": "Comment on SIP returns video",
+        "snippet": "Started SIP last year because a YouTuber said 12% guaranteed. After 8 months I am down 4%. App doesn't explain why negative. My father says stop and put in FD.",
+        "url": "https://youtube.com/watch?v=example"
+      },
+      {
+        "source": "Reddit",
+        "title": "SIP pause vs stop - confused",
+        "snippet": "Market fell 5% this month. Wanted to pause SIP for 2 months but app only has stop. Don't want to lose the SIP. Ended up doing nothing and now it lapsed.",
+        "url": "https://reddit.com/r/personalfinanceindia/comments/ghi789"
+      }
+    ],
+    "lack_of_visibility": [
+      {
+        "source": "Groww",
+        "title": "Good app but SIP paused itself",
+        "snippet": "Started a SIP of 500 in month 1. After 3 months it just paused. No clear reason in app. I kept checking returns but they looked flat.",
+        "url": "https://play.google.com/store/apps/details?id=com.groww"
+      },
+      {
+        "source": "Reddit",
+        "title": "First time SIP - what to expect after 6 months?",
+        "snippet": "I started a SIP via Groww 6 months ago. Portfolio shows 2% return. Friends say equity takes time but the app doesn't explain this. Should I stop?",
+        "url": "https://reddit.com/r/IndiaInvestments/comments/abc123"
+      },
+      {
+        "source": "TradingQ&A",
+        "title": "How often should I check SIP portfolio?",
+        "snippet": "New to Groww. Checking NAV daily. Some days green some days red. Anxiety every evening. Friends say don't check daily but app sends daily push notifications.",
+        "url": "https://tradingqna.com/question/99"
+      }
+    ],
+    "outside_app_behavior": [
+      {
+        "source": "Reddit",
+        "title": "First time SIP - what to expect after 6 months?",
+        "snippet": "I started a SIP via Groww 6 months ago. Portfolio shows 2% return. Friends say equity takes time but the app doesn't explain this. Should I stop?",
+        "url": "https://reddit.com/r/IndiaInvestments/comments/abc123"
+      },
+      {
+        "source": "YouTube",
+        "title": "Comment on SIP returns video",
+        "snippet": "Started SIP last year because a YouTuber said 12% guaranteed. After 8 months I am down 4%. App doesn't explain why negative. My father says stop and put in FD.",
+        "url": "https://youtube.com/watch?v=example"
+      },
+      {
+        "source": "TradingQ&A",
+        "title": "How often should I check SIP portfolio?",
+        "snippet": "New to Groww. Checking NAV daily. Some days green some days red. Anxiety every evening. Friends say don't check daily but app sends daily push notifications.",
+        "url": "https://tradingqna.com/question/99"
+      }
+    ],
+    "influence_source": [
+      {
+        "source": "Reddit",
+        "title": "First time SIP - what to expect after 6 months?",
+        "snippet": "I started a SIP via Groww 6 months ago. Portfolio shows 2% return. Friends say equity takes time but the app doesn't explain this. Should I stop?",
+        "url": "https://reddit.com/r/IndiaInvestments/comments/abc123"
+      },
+      {
+        "source": "YouTube",
+        "title": "Comment on SIP returns video",
+        "snippet": "Started SIP last year because a YouTuber said 12% guaranteed. After 8 months I am down 4%. App doesn't explain why negative. My father says stop and put in FD.",
+        "url": "https://youtube.com/watch?v=example"
+      },
+      {
+        "source": "TradingQ&A",
+        "title": "How often should I check SIP portfolio?",
+        "snippet": "New to Groww. Checking NAV daily. Some days green some days red. Anxiety every evening. Friends say don't check daily but app sends daily push notifications.",
+        "url": "https://tradingqna.com/question/99"
+      }
+    ],
+    "confusion_worry_in_app": [
+      {
+        "source": "Groww",
+        "title": "SIP money debited but not invested",
+        "snippet": "₹1000 was debited from my bank for SIP but mutual fund units not showing. Customer care gave no timeline. Very worried. Thinking to stop SIP.",
+        "url": "https://play.google.com/store/apps/details?id=com.groww"
+      },
+      {
+        "source": "Reddit",
+        "title": "Freelancer income irregular - should I pause SIP?",
+        "snippet": "I earn freelance, income comes in bursts. Started SIP of 2000 but some months I can't pay. App shows SIP failed but no option to skip just one month. Feels all-or-nothing.",
+        "url": "https://reddit.com/r/IndiaInvestments/comments/def456"
+      }
+    ],
+    "segment_income_stability": [
+      {
+        "source": "Reddit",
+        "title": "Freelancer income irregular - should I pause SIP?",
+        "snippet": "I earn freelance, income comes in bursts. Started SIP of 2000 but some months I can't pay. App shows SIP failed but no option to skip just one month. Feels all-or-nothing.",
+        "url": "https://reddit.com/r/IndiaInvestments/comments/def456"
+      }
+    ],
+    "expectation_mismatch": [
+      {
+        "source": "YouTube",
+        "title": "Comment on SIP returns video",
+        "snippet": "Started SIP last year because a YouTuber said 12% guaranteed. After 8 months I am down 4%. App doesn't explain why negative. My father says stop and put in FD.",
+        "url": "https://youtube.com/watch?v=example"
+      }
+    ],
+    "checking_frequency": [
+      {
+        "source": "TradingQ&A",
+        "title": "How often should I check SIP portfolio?",
+        "snippet": "New to Groww. Checking NAV daily. Some days green some days red. Anxiety every evening. Friends say don't check daily but app sends daily push notifications.",
+        "url": "https://tradingqna.com/question/99"
+      }
+    ]
+  },
+  "opportunity_areas": [
+    {
+      "id": "oa_pause_intervention",
+      "name": "Intervene before pause / reduce / stop",
+      "description": "SIPs lapse silently; no early-warning or graceful pause option.",
+      "linked_themes": [
+        "pause_reduce_stop",
+        "confusion_worry_in_app"
+      ],
+      "avg_prevalence": 57.2,
+      "max_prevalence": 85.7,
+      "fixability": 0.7,
+      "opportunity_score": 55.69
+    },
+    {
+      "id": "oa_progress_visibility",
+      "name": "Make SIP progress visible and meaningful between instalments",
+      "description": "Users check infrequently and see flat numbers; no sense of compounding progress.",
+      "linked_themes": [
+        "lack_of_visibility",
+        "checking_frequency",
+        "returns_underwhelming"
+      ],
+      "avg_prevalence": 38.1,
+      "max_prevalence": 57.1,
+      "fixability": 0.85,
+      "opportunity_score": 37.88
+    },
+    {
+      "id": "oa_settling_expectations",
+      "name": "Set realistic first-year return expectations",
+      "description": "First-time investors expect quick/linear growth; flat or red months trigger doubt.",
+      "linked_themes": [
+        "expectation_mismatch",
+        "returns_underwhelming"
+      ],
+      "avg_prevalence": 35.7,
+      "max_prevalence": 57.1,
+      "fixability": 0.8,
+      "opportunity_score": 36.58
+    },
+    {
+      "id": "oa_in_app_clarity",
+      "name": "Reduce in-app confusion around SIP status and failed instalments",
+      "description": "Debited-but-not-invested, failed mandate, unclear SIP status cause worry.",
+      "linked_themes": [
+        "confusion_worry_in_app",
+        "lack_of_visibility"
+      ],
+      "avg_prevalence": 35.8,
+      "max_prevalence": 42.9,
+      "fixability": 0.9,
+      "opportunity_score": 32.54
+    },
+    {
+      "id": "oa_outside_app_guidance",
+      "name": "Meet users where they go when unsure (outside the app)",
+      "description": "Users Google / ask friends instead of in-app support; get mixed advice.",
+      "linked_themes": [
+        "outside_app_behavior",
+        "confusion_worry_in_app"
+      ],
+      "avg_prevalence": 35.8,
+      "max_prevalence": 42.9,
+      "fixability": 0.6,
+      "opportunity_score": 31.94
+    }
+  ],
+  "segment_sample": [
+    {
+      "source": "Reddit",
+      "signals": {
+        "influence_source": [
+          "friend"
+        ]
+      },
+      "snippet": "First time SIP - what to expect after 6 months? I started a SIP via Groww 6 months ago. Portfolio shows 2% return. Friends say equity takes time but the app doesn't explain this. Should I stop?"
+    },
+    {
+      "source": "Reddit",
+      "signals": {
+        "income_stability": [
+          "freelance",
+          "irregular"
+        ]
+      },
+      "snippet": "Freelancer income irregular - should I pause SIP? I earn freelance, income comes in bursts. Started SIP of 2000 but some months I can't pay. App shows SIP failed but no option to skip just one month. "
+    },
+    {
+      "source": "YouTube",
+      "signals": {
+        "influence_source": [
+          "father",
+          "youtube"
+        ]
+      },
+      "snippet": "Comment on SIP returns video Started SIP last year because a YouTuber said 12% guaranteed. After 8 months I am down 4%. App doesn't explain why negative. My father says stop and put in FD."
+    },
+    {
+      "source": "TradingQ&A",
+      "signals": {
+        "influence_source": [
+          "friend"
+        ]
+      },
+      "snippet": "How often should I check SIP portfolio? New to Groww. Checking NAV daily. Some days green some days red. Anxiety every evening. Friends say don't check daily but app sends daily push notifications."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "name": "SIP Retention AI Discovery Engine",
+  "nodes": [
+    {
+      "parameters": {},
+      "name": "Start",
+      "type": "n8n-nodes-base.start",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "sources": ["play_store", "app_store", "reddit", "youtube", "tradingqa", "twitter"],
+        "query": "Groww SIP first time investor pause stop",
+        "timeframe_days": 90,
+        "redact_pii": true
+      },
+      "name": "Ingest Public Conversations",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [520, 300],
+      "webhookId": ""
+    },
+    {
+      "parameters": {
+        "operation": "deduplicate",
+        "field": "content_hash",
+        "store_raw": true,
+        "output_path": "/data/raw"
+      },
+      "name": "Deduplicate & Store Raw",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [790, 300]
+    },
+    {
+      "parameters": {
+        "batch_size": 50,
+        "model": "claude-3-sonnet",
+        "system_prompt": "You are a senior product researcher analyzing Indian first-time mutual fund investors. Identify themes: why they started SIP, what changed, why they pause/stop, what they check, confusion points, outside-app behavior, segment differences. Return JSON with themes, quotes, confidence. Never output investment advice.",
+        "prompt_template": "Analyze this batch of public conversations about SIP investing in India. For each item extract: (1) themes present, (2) key quote, (3) sentiment (positive/neutral/negative), (4) segment signals (income stability, age hint, influence source), (5) pause/stop signals. Output JSON array."
+      },
+      "name": "AI Theme Extraction (Claude)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1060, 300]
+    },
+    {
+      "parameters": {
+        "operation": "aggregate",
+        "metrics": ["theme_prevalence", "cross_segment_comparison", "opportunity_scoring"],
+        "output_path": "/data/analysis/discovery_output.json"
+      },
+      "name": "Aggregate & Score Opportunities",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1330, 300]
+    },
+    {
+      "parameters": {
+        "condition": "={{ $json[\"theme_prevalence\"] and $json[\"opportunity_areas\"] }}",
+        "trueBranch": ["Evidence Log Writer"],
+        "falseBranch": ["Retry Analysis"]
+      },
+      "name": "Quality Gate: Output Complete?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1600, 300]
+    },
+    {
+      "parameters": {
+        "evidence_log_path": "/evidence/AI_Evidence_Log.md",
+        "golden_set_path": "/evidence/golden_set.json",
+        "append_findings": true
+      },
+      "name": "Evidence Log Writer",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1870, 300]
+    },
+    {
+      "parameters": {
+        "retry_count": "={{ $json[\"retry_count\"] + 1 }}",
+        "max_retries": 3
+      },
+      "name": "Retry Analysis",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1600, 480]
+    }
+  ],
+  "connections": {
+    "Start": {
+      "main": [[{"node": "Ingest Public Conversations", "type": "main", "index": 0}]]
+    },
+    "Ingest Public Conversations": {
+      "main": [[{"node": "Deduplicate & Store Raw", "type": "main", "index": 0}]]
+    },
+    "Deduplicate & Store Raw": {
+      "main": [[{"node": "AI Theme Extraction (Claude)", "type": "main", "index": 0}]]
+    },
+    "AI Theme Extraction (Claude)": {
+      "main": [[{"node": "Aggregate & Score Opportunities", "type": "main", "index": 0}]]
+    },
+    "Aggregate & Score Opportunities": {
+      "main": [[{"node": "Quality Gate: Output Complete?", "type": "main", "index": 0}]]
+    },
+    "Quality Gate: Output Complete?": {
+      "main": [
+        [{"node": "Evidence Log Writer", "type": "main", "index": 0}],
+        [{"node": "Retry Analysis", "type": "main", "index": 0}]
+      ]
+    },
+    "Retry Analysis": {
+      "main": [[{"node": "AI Theme Extraction (Claude)", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {},
+  "id": "sip-discovery-engine-001"
+}
