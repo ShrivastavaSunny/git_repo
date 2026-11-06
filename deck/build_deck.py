@@ -240,7 +240,7 @@ for head, body in steps:
     for ln in lines:
         text(c, 60, cy2, ln, size=14, color=DARK); cy2 -= 18
     cy -= 20 + len(lines)*18 + 14
-para(c, 40, cy+6, "Deployed as a public Streamlit app (Demo mode works without API keys; live LLM optional via API key).", size=14, color=NAVY, bold=True)
+para(c, 40, cy+6, "Deployed as a public web app (https://sip-static-mvp.vercel.app). Demo mode runs fully in-browser; no API key needed. Includes an interactive discovery-engine theme detector.", size=14, color=NAVY, bold=True)
 
 c.showPage()
 # ================= SLIDE 9 — MVP user testing =================
