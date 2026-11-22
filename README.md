@@ -2,6 +2,18 @@
 
 A greenfield prototype for the 90-day repeat-booking product challenge.
 
+## Public deliverables
+
+- [Production MVP and Discovery Engine](https://dist-pink-one-67.vercel.app/)
+- [AI Evidence Log](https://dist-pink-one-67.vercel.app/evidence.html)
+- [10-slide deck PDF](https://dist-pink-one-67.vercel.app/NL_UrbanCompany_RepeatBooking.pdf)
+
+## Public deliverables
+
+- [Production MVP and Discovery Engine](https://dist-pink-one-67.vercel.app/)
+- [AI Evidence Log](https://dist-pink-one-67.vercel.app/evidence.html)
+- [10-slide deck PDF](https://dist-pink-one-67.vercel.app/NL_UrbanCompany_RepeatBooking.pdf)
+
 ## Run
 
 ```bash
