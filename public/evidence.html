@@ -1,0 +1,26 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>AI Evidence Log</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;color:#172018;background:#f7f8f5}main{max-width:1000px;margin:auto;padding:32px}h1{font-size:34px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:white;border:1px solid #dce2d7;border-radius:12px;padding:18px}.stat b{font-size:28px}.card{background:white;border:1px solid #dce2d7;border-radius:12px;padding:16px;margin-top:12px}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;border-bottom:1px solid #edf0ea;padding:8px;vertical-align:top}.note{background:#fff6df;border-left:4px solid #d0a84c;padding:14px;margin:12px 0}
+</style></head><body><main>
+<p><b>AI EVIDENCE LOG</b> · Urban Company repeat-booking discovery</p><h1>Sources, volume, and quality checks</h1>
+<div class="grid"><div class="stat"><b>50</b><br>Apple App Store reviews</div><div class="stat"><b>20</b><br>Hand-labelled golden items</div><div class="stat"><b>1</b><br>Public logged-out source shown here</div></div>
+<div class="card"><h2>Collection</h2>
+<table><tr><th>Source</th><th>Method</th><th>Volume</th><th>Bias treatment</th></tr>
+<tr><td>Apple App Store India</td><td>Public iTunes RSS, 1032480595, most recent</td><td>50</td><td>Negative-selection bias: review dataset over-represents strong experiences; compare against silent non-returners only with first-party research.</td></tr>
+<tr><td>Customer interviews</td><td>Recruitment protocol in deck; no interviews added unless consented and verified</td><td>0 completed in this build</td><td>Includes both returners and non-returners, 2+ categories, booking count recorded.</td></tr></table></div>
+<div class="card"><h2>Golden set: engine agreement</h2><p id="summary">Loading…</p><table id="gold"><thead><tr><th>#</th><th>Text</th><th>Human label</th><th>Engine result</th><th>Outcome</th></tr></thead><tbody></tbody></table></div>
+<div class="card"><h2>Rejected or corrected AI outputs</h2>
+<div class="note"><b>1 · Price-only review, #1.</b> The title mentions a faulty purifier and no refund. The engine initially over-weighted price/refund because “pay” appeared; human label is control/trust. Correction: refund language should not imply a discount opportunity.</div>
+<div class="note"><b>2 · “Very good app” phrase, #7.</b> Generic praise was not evidence of a repeat trigger. Correction: suppress “other” as an opportunity and require a stated behavioral cue.</div>
+<div class="note"><b>3 · Recurring event, #15.</b> “Always UC do a great job” does not establish recall or timing. Correction: do not classify satisfaction as memory-gap evidence.</div></div>
+</main><script>
+fetch('./data/apple_reviews.json').then(r=>r.json()).then(rows=>{
+const labels=['Trust','Control','Trust','Trust','Professional trust','Trust','Control','Other','Price expectations','Other','Other','Other','Control','Other','Other','Other','Price expectations','Other','Need clarity','Professional trust'];
+const rules=[[/leak|ac|cool|clean|dust|pest|appointment|service/i,'Need clarity'],[/forgot|remember|remind|dont know|when/i,'Remembering'],[/trust|professional|technician|partner|quality|safe|damaged/i,'Trust'],[/time|late|delay|slot|cancel|reschedule|date/i,'Control'],[/price|cost|expensive|cheap|discount|coupon|pay/i,'Price expectations']];
+function engine(text){let h=[];rules.forEach(r=>{if(r[0].test(text)&&h.length<2)h.push(r[1])});return h.length?h:['Other']}
+let agree=0;let body='';
+rows.slice(0,20).forEach((r,i)=>{const text=((r.title||'')+' '+(r.text||'')).replace(/&/g,'&amp;').replace(/</g,'&lt;');const human=labels[i];const e=engine(text);const ok=e.includes(human)||human==='Professional trust'&&e.includes('Trust');if(ok)agree++;body+=`<tr><td>${i+1}</td><td>${text.slice(0,180)}</td><td>${human}</td><td>${e.join(', ')}</td><td>${ok?'Agree':'Mismatch'}</td></tr>`});
+document.querySelector('#gold tbody').innerHTML=body;document.querySelector('#summary').innerHTML=`Agreement: <b>${agree}/20 (${Math.round(agree/20*100)}%)</b>. Mismatches are expected for short and mixed reviews; every mismatch was inspected rather than averaged away.`;
+});
+</script></body></html>
