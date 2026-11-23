@@ -131,8 +131,13 @@ function Engine() {
   const [source, setSource] = useState('Customer transcript')
 
   async function loadPublicSample() {
-    const response = await fetch('./data/apple_reviews.json')
-    const reviews = response.ok ? await response.json() : []
+    const [appleResponse, playResponse] = await Promise.all([
+      fetch('./data/apple_reviews.json'),
+      fetch('./data/play_reviews.json'),
+    ])
+    const apple = appleResponse.ok ? await appleResponse.json() : []
+    const play = playResponse.ok ? await playResponse.json() : []
+    const reviews = [...apple, ...play]
     setRows(reviews.map((item) => ({ source: item.source, text: `${item.title} ${item.text}`, rating: item.rating, date: item.date, url: item.url })))
   }
 
@@ -160,7 +165,7 @@ function Engine() {
             <option>Customer transcript</option><option>App review</option><option>Community post</option><option>Complaint forum</option><option>YouTube comment</option>
           </select>
           <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder={'Paste one customer statement per line…'} />
-          <div className="actions"><button className="primary" onClick={analyze}>Analyze text</button><button onClick={loadPublicSample}>Load 50 public Apple reviews</button></div>
+          <div className="actions"><button className="primary" onClick={analyze}>Analyze text</button><button onClick={loadPublicSample}>Load 200 public app reviews</button></div>
         </div>
         <div className="card">
           <h2>Opportunity comparison</h2>

@@ -8,9 +8,11 @@
     "build": "vite build",
     "lint": "oxlint",
     "export:evidence": "node scripts/export_apple_reviews.mjs",
+    "export:play": "node scripts/export_play_reviews.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
+    "google-play-scraper": "^10.1.4",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
